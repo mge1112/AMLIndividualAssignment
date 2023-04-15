@@ -14,7 +14,7 @@ st.set_page_config(page_title="Sentiment Analyzer", layout="wide")
 
 st.title("Sentiment Analyzer")
 
-home, model, team = st.tabs(["Home", "Model", "Team"])
+home, model= st.tabs(["Home", "Model"])
 
 with home:
     # getting data from your firestore database - reddit collection
@@ -106,18 +106,4 @@ with model:
     "---"
     st.subheader("Data Collection and Workflow")
     "---"
-    
-
-
-with team:
-    st.subheader("About")
-    "7650 Consulting is a proven leader in building sentiment models. bhah blah blah"
-    st.subheader("Team")
-    "---"
-    col1, col2 = st.columns([1,3])
-    with col1:
-        st.image("member.png")
-    with col2:
-        st.subheader("Member Name")
-        "bhah blah blah"
     
