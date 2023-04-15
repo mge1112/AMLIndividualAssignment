@@ -20,30 +20,17 @@ home, model= st.tabs(["Home", "Model"])
 
 with home:
     # getting data from your firestore database - reddit collection
-    db = firestore.Client()
-    query = db.collection(u'reddit').order_by(u'created', direction=firestore.Query.DESCENDING)
-    posts = list(query.stream())
-    docs_dict = list(map(lambda x: x.to_dict(), posts))
-    df = pd.DataFrame(docs_dict)
 
-    created_end = datetime.fromtimestamp(df.iloc[:1,:].created.values[0])
-    created_start = datetime.fromtimestamp(df.iloc[-1:,:].created.values[0])
+    df = pd.read_csv('modified_test.csv')
 
-    date_start = st.sidebar.date_input("From", value=created_start, min_value=created_start, max_value=created_end)
-    date_end = st.sidebar.date_input("To", value=created_end, min_value=created_start, max_value=created_end)
     posts_length_range = st.sidebar.slider("Posts Length", min_value=1, max_value=9999, value=[1, 9999])
-
-    date_start_str = date_start.strftime('%Y-%m-%d')
-    date_end_str = date_end.strftime('%Y-%m-%d')
-    df['date'] = df['created'].apply(lambda x: datetime.fromtimestamp(x).strftime('%Y-%m-%d'))
-    df = df.loc[(df.date >= date_start_str) & (df.date <= date_end_str), :]
     
-    df['length'] = df['selftext'].apply(lambda x: len(x))
+    df['length'] = df['review'].apply(lambda x: len(x))
     df = df.loc[(df.length >= posts_length_range[0]) & (df.length <= posts_length_range[1]), :]
     
     chart, desc = st.columns([2,1])
     with chart: 
-        fig = px.histogram(df, x='date', color='sentiment', color_discrete_map={"positive": "blue", "negative": "tomato"}, barmode="group")
+        fig = px.histogram(df, x='length', color='rating', color_discrete_map={"1": "blue", "0": "tomato"}, barmode="group")
         st.plotly_chart(fig)
         st.caption("sentiment on subreddit r/movies")
     with desc:
@@ -55,16 +42,16 @@ with home:
     "---"
 
     # World Cloud
-    df_pos = df.loc[df.sentiment == "positive", ["selftext"]]
-    df_neg = df.loc[df.sentiment == "negative", ["selftext"]]
+    df_pos = df.loc[df.rating == 1, ["review"]]
+    df_neg = df.loc[df.rating == 0, ["review"]]
     
     col1, col2 = st.columns(2)
     with col1:
         st.subheader("Positive Posts")
-        st.image(WordCloud().generate("/n".join(list(df_pos.selftext))).to_image())
+        st.image(WordCloud().generate("/n".join(list(df_pos.review))).to_image())
     with col2:
         st.subheader("Negative Posts")
-        st.image(WordCloud().generate("/n".join(list(df_neg.selftext))).to_image())
+        st.image(WordCloud().generate("/n".join(list(df_neg.review))).to_image())
 
     "---"
 
