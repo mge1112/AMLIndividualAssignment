@@ -45,7 +45,7 @@ with home:
         st.plotly_chart(fig)
         st.caption("sentiment on subreddit r/movies")
     with desc:
-        st.subheader("Movie Review Sentiment on Reddit")
+        st.subheader("Patient Review Sentiment on on UCI Machine Learning Repository")
         st.write("Using our amazing sentiment model we have been able predit \
                  the sentiment of user posts on subreddit 'r/movies'. The graph shows the \
                  number user posts (positive and negative) for each day for the selected date range.")
