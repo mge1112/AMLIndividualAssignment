@@ -1,0 +1,9 @@
+pandas
+matplotlib
+plotly
+numpy
+sklearn
+requests
+streamlit
+google-cloud-firestore
+wordcloud

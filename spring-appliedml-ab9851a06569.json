@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "spring-appliedml",
+  "private_key_id": "ab9851a06569ba223dca2be8c592aa51f49088a6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCtL4VxKSkjp66h\nYQgp1bOuYQCwZPrydZYeVCZ57IxnrsDpjy5s47YqVBZI/ijZ5kXA8oIllviOfAJv\ntw+U9OzwIGqmsY2tEC88W1TuHCbXUGN6ZibfUwUeLPmQJCOChny2Bt/SI44+V+Ua\nxluLLWibzbnrejbd6XYdD8NI8Ex1BOlpoJAfD7bjyhNs4a8xL2+MBKK8Spi/nP1h\nQ8D4yFk3oQonS/Lj3+bnfMKkCOTBtExaSyUdHl3xMw1pQFm6XTeYsN3BeUd//6ob\nQwqbd6YjefpjTLK4Mpb4C0iETe4Wch08Awy6d0Ag90rG1DNc2ds8+kK25h7r2Hvf\notU5KXMRAgMBAAECggEAJou1pR6Wp/dp0ERS91C3mb/AUgJfsjhGrcBoAeoKxAbq\nq/Ew0Y6LHHezsBJVkE4Gx2+SVQB5mOjz995kKvCqjbWBV1GcaWD5SnM/f3GnmXOs\neHElBL6rHHDBKPpKJwJ83lzAUzqTrb+NX/y3Ik58gnTzBPyiGpkcL1KzUdgeBEsy\nRuXH8McozKprOVOv1zs4HBF1eELNOKq4lZuZ02iO1AT9NWBoXUcDpltqu4WQDZac\n5Mp/hOchMFlkCLkETIXJKtVw102wGs+7WO/ls2c2HppdaCEutNPt98Laj/jJNiIu\n8dG6AclGGzmgwJL6bRTeXTLX6sFMp6KULADgirTUmwKBgQDaiwQJnmQQlSjTK0Cb\nuQ7R/xQkYNUVNDvp3LGOWqFkTuwDS2dU63upHZWND59y+/rfNW2+LcekFuAn5XyM\nzfFToC+NTYPC3l7CJV2wfrPusy0blLh9aZgCRDjsCeyN5bSmUnmMIy6syHMwRJea\nVrekELzfJkHwDnLrJWFDmBpCdwKBgQDK3l1dNI+lgL3OvE7/kYWaiRy6mGy0LWf8\nmZWjh1IwKHZimP9THT/sA7aXyNR5hKuqxjDSpNfaHGiihcYC7zXiZdn56EP6pkhD\nvx3YNQ5Qf+clyjmQGq/ohSh8CW/cRg6XF0wGquZmbONVM+enSF0tYyJQts0Rh8XM\nSJ2uhkeQtwKBgBLZzOZbgDwh8ZyNbYxBITMh8oXUyGyEzeo1PCeQT72MRTVfirE7\ngrYqtByvzUwoyhH41NeDsWXJB1rJo72tgfR5q8BfgE8NyVSrznIL689aKzjm0icX\nNaJ0agiKLppqxvNVx+A7pKoIvE7ci8snUb3YJ8KD1Uo0pNr9pW8kLpevAoGAcM1u\nSrpEOXm5kO/CWXc4O/KLp/HDV/h7fsiDnTdMavzEvxRlvHhiJ8D00bdY9ezga4fi\nc+43G896GwyZSt5qLuYFa2FME15MhmcJmEQAHqDQDYJBubAtKfSIy1eP/IJz8G2C\n155FmKRpT+IZqDmjne4mkYzjwCCnymyCSR3fQ0cCgYA1/RcteHyu3NFGAxkI5I7G\n4XeDOVpd9/jUJTjYjmE5/24vjnA3EXTlKb+ttcALoEP7FlgbZpSAL4BpgBsH8H2o\nwhwfH8FKxqKx/E0xFnXHiTRaN/MRkTwuY2fCyAJVnKc2uwsB5iqfOVgeObwm0KOT\nhwwgUfCaEfUKcmqsm23pfA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "spring-appliedml@appspot.gserviceaccount.com",
+  "client_id": "107199873673517776932",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/spring-appliedml%40appspot.gserviceaccount.com"
+}
