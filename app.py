@@ -32,7 +32,7 @@ with home:
     with chart: 
         fig = px.histogram(df, x='length', color='rating', color_discrete_map={"1": "blue", "0": "tomato"}, barmode="group")
         st.plotly_chart(fig)
-        st.caption("sentiment on subreddit r/movies")
+        st.caption("sentiment on patient reviews on UCI Machine Learning Repository")
     with desc:
         st.subheader("Patient Review Sentiment on on UCI Machine Learning Repository")
         st.write("In the bar chart on the left, a rating of 1 indicates \
