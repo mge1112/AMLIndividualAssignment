@@ -63,17 +63,17 @@ with home:
         placeholder = st.empty()
         with placeholder.container():
             for index, row in df.sample(10).iterrows():
-                text = row["selftext"].strip()
+                text = row["review"].strip()
                 if text != "":
                     col1, col2 = st.columns([3,1])
                     with col1:
                         with st.expander(text[:100] + "..."):
                             st.write(text)
                     with col2:
-                        if row["sentiment"] == "positive":
-                            st.info(row['sentiment'])
+                        if row["rating"] == 1:
+                            st.info(row['rating'])
                         else:
-                            st.error(row['sentiment'])
+                            st.error(row['rating'])
         if st.button("Clear", type="primary"):
             placeholder.empty()
 
