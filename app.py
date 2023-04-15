@@ -95,6 +95,8 @@ with model:
         using the bhah bhah features and techniques bhah bhah"
     
     st.subheader("Model Training Dataset")
+    train = pd.read_csv('train.csv')
+    st.write(train)
     "---"
     st.subheader("Model Training")
     "---"
