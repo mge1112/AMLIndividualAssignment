@@ -77,10 +77,10 @@ with home:
             placeholder.empty()
 
 with model:
-    st.subheader("OSentiment Model")
+    st.subheader("Sentiment Model")
     col1, col2, col3 = st.columns(3)
-    col1.metric("Accuracy", "82%")
-    col2.metric("F1 Score", "0.78")
+    col1.metric("Accuracy", "75.9%")
+    col2.metric("F1 Score", "0.8429")
     with col3:
         "We have been able to achieve this amazing performance in our sentiment models \
         using the bhah bhah features and techniques bhah bhah"
@@ -94,6 +94,21 @@ with model:
     st.write(modified_train)
     "---"
     st.subheader("Model Training")
+    with st.beta_expander("LinearSVC1-baseline"):
+        st.subheader("Subheader 1.1")
+        st.write("Content for Subheader 1.1")
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Training accuracy", "75.5%")
+        col2.metric("Validation accuracy", "75.9%")
+        col2.metric("F1 Score", "75.9%")
+        st.subheader("Subheader 1.2")
+        st.write("Content for Subheader 1.2")
+
+    with st.beta_expander("Subheader 2"):
+        st.subheader("Subheader 2.1")
+        st.write("Content for Subheader 2.1")
+        st.subheader("Subheader 2.2")
+        st.write("Content for Subheader 2.2")
     "---"
     st.subheader("Model Testing")
     "---"
