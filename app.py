@@ -98,6 +98,10 @@ with model:
     train = pd.read_csv('train.csv')
     st.write(train)
     "---"
+    st.subheader("Modified Training Dataset")
+    modified_train = pd.read_csv('modified_train.csv')
+    st.write(modified_train)
+    "---"
     st.subheader("Model Training")
     "---"
     st.subheader("Model Testing")
