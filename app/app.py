@@ -7,6 +7,33 @@ import plotly.express as px
 import plotly.graph_objects as go
 from wordcloud import WordCloud
 
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.model_selection import cross_val_score
+from sklearn.svm import LinearSVC
+from sklearn.metrics import accuracy_score, f1_score
+from sklearn.pipeline import Pipeline
+from sklearn import metrics
+import re
+
+train = pd.read_csv('modified_train.csv')
+train_X = train.loc[:, ['review']]
+train_y = train.rating
+X_train, X_test, y_train, y_test = train_test_split(train_X, train_y, test_size=0.3, stratify=train_y)
+X_train_docs = [doc for doc in X_train.review]
+pipeline = Pipeline([
+            ('vect', TfidfVectorizer(ngram_range=(1,2), 
+                                    stop_words='english')),
+            ('cls', LinearSVC())
+])
+pipeline.fit(X_train_docs, y_train)
+training_accuracy = cross_val_score(pipeline, X_train_docs, y_train, cv=5).mean()
+predicted = pipeline.predict([doc for doc in X_test.review])
+validation_accuracy = metrics.accuracy_score(y_test, predicted)
+f1_score = f1_score(y_test, predicted)
+
+
 # your google credentials json file 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "spring-appliedml-ab9851a06569.json"
 
