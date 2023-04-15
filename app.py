@@ -80,8 +80,8 @@ with home:
 with model:
     st.subheader("Our Sentiment Model")
     col1, col2, col3 = st.columns(3)
-    col1.metric("Accuracy", "82%", "3%")
-    col2.metric("F1 Score", "0.78", "0.03")
+    col1.metric("Accuracy", "82%")
+    col2.metric("F1 Score", "0.78")
     with col3:
         "We have been able to achieve this amazing performance in our sentiment models \
         using the bhah bhah features and techniques bhah bhah"
