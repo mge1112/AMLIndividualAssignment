@@ -6,7 +6,6 @@ from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 from wordcloud import WordCloud
-import pickle
 
 
 # your google credentials json file 
@@ -95,10 +94,6 @@ with model:
     st.write(modified_train)
     "---"
     st.subheader("Model Training")
-    with open('patient_review_pipeline.pkl', 'rb') as f:
-        pipeline = pickle.load(f)
-    test = pd.read_csv('modified_test.csv')
-    st.dataframe(test.sample(5))
     "---"
     st.subheader("Model Testing")
     "---"
