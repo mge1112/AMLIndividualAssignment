@@ -35,9 +35,12 @@ with home:
         st.caption("sentiment on subreddit r/movies")
     with desc:
         st.subheader("Patient Review Sentiment on on UCI Machine Learning Repository")
-        st.write("Using our amazing sentiment model we have been able predit \
-                 the sentiment of user posts on subreddit 'r/movies'. The graph shows the \
-                 number user posts (positive and negative) for each day for the selected date range.")
+        st.write("In the bar chart on the left, a rating of 1 indicates \
+                 that the patient rating falls within the range of 7 to 10, \
+                 representing a positive attitude towards the drugs. \
+                 A rating of 0 indicates that the patient rating falls within \
+                 the range of 1 to 6, representing a negative attitude towards \
+                 the drugs.")
 
     "---"
 
