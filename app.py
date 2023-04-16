@@ -81,9 +81,6 @@ with model:
     col1, col2, col3 = st.columns(3)
     col1.metric("Accuracy", "76.7%")
     col2.metric("F1 Score", "0.842")
-    with col3:
-        "We have been able to achieve this amazing performance in our sentiment models \
-        using the bhah bhah features and techniques bhah bhah"
     
     st.subheader("Model Training Dataset")
     train = pd.read_csv('train.csv')
@@ -119,6 +116,7 @@ with model:
         col2.metric("F1 Score", "0.819")    
     "---"
     st.subheader("Model Testing")
+    st.write("Based on F1 scores of 4 models, I chose Model 2 which has the highest score.")
     "---"
 
 
