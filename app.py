@@ -79,8 +79,8 @@ with home:
 with model:
     st.subheader("Sentiment Model")
     col1, col2, col3 = st.columns(3)
-    col1.metric("Accuracy", "75.9%")
-    col2.metric("F1 Score", "0.8429")
+    col1.metric("Accuracy", "76.7%")
+    col2.metric("F1 Score", "0.842")
     with col3:
         "We have been able to achieve this amazing performance in our sentiment models \
         using the bhah bhah features and techniques bhah bhah"
@@ -94,21 +94,29 @@ with model:
     st.write(modified_train)
     "---"
     st.subheader("Model Training")
-    with st.beta_expander("LinearSVC1-baseline"):
-        st.subheader("Subheader 1.1")
-        st.write("Content for Subheader 1.1")
+    with st.beta_expander("Model1: LinearSVC1-baseline"):
+        st.write("I combined the 3 review columns to one coulmn and used LinearSVC model to predict.")
         col1, col2, col3 = st.columns(3)
-        col1.metric("Training accuracy", "75.5%")
-        col2.metric("Validation accuracy", "75.9%")
-        col2.metric("F1 Score", "75.9%")
-        st.subheader("Subheader 1.2")
-        st.write("Content for Subheader 1.2")
+        col1.metric("Training accuracy", "76.3%")
+        col2.metric("Validation accuracy", "75.7%")
+        col2.metric("F1 Score", "0.840")
 
-    with st.beta_expander("Subheader 2"):
-        st.subheader("Subheader 2.1")
-        st.write("Content for Subheader 2.1")
-        st.subheader("Subheader 2.2")
-        st.write("Content for Subheader 2.2")
+    with st.beta_expander("Model2: LinearSVC2"):
+        st.write("On the basis of model1, I converted text columns to lowercase and removed numbers from text.")
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Training accuracy", "76.2%")
+        col2.metric("Validation accuracy", "76.1%")
+        col2.metric("F1 Score", "0.842")
+
+    with st.beta_expander("Model3: Logistic Regression"):
+        col1, col2 = st.columns(2)
+        col1.metric("Accuracy", "69.6%")
+        col2.metric("F1 Score", "0.818")
+
+    with st.beta_expander("Model4: Random Forest"):
+        col1, col2 = st.columns(2)
+        col1.metric("Training accuracy", "69.8%")
+        col2.metric("F1 Score", "0.819")    
     "---"
     st.subheader("Model Testing")
     "---"
