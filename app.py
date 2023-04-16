@@ -91,34 +91,38 @@ with model:
     modified_train = pd.read_csv('modified_train.csv')
     st.write(modified_train)
     "---"
+    st.subheader("Modified Testing Dataset")
+    modified_test = pd.read_csv('modified_test.csv')
+    st.write(modified_test)
+    "---"
     st.subheader("Model Training")
-    with st.beta_expander("Model1: LinearSVC1-baseline"):
+    with st.expander("Model1: LinearSVC1-baseline"):
         st.write("I combined the 3 review columns to one coulmn and used LinearSVC model to predict.")
         col1, col2, col3 = st.columns(3)
         col1.metric("Training accuracy", "76.3%")
         col2.metric("Validation accuracy", "75.7%")
         col2.metric("F1 Score", "0.840")
 
-    with st.beta_expander("Model2: LinearSVC2"):
+    with st.expander("Model2: LinearSVC2"):
         st.write("On the basis of model1, I converted text columns to lowercase and removed numbers from text.")
         col1, col2, col3 = st.columns(3)
         col1.metric("Training accuracy", "76.2%")
         col2.metric("Validation accuracy", "76.1%")
         col2.metric("F1 Score", "0.842")
 
-    with st.beta_expander("Model3: Logistic Regression"):
+    with st.expander("Model3: Logistic Regression"):
         col1, col2 = st.columns(2)
         col1.metric("Accuracy", "69.6%")
         col2.metric("F1 Score", "0.818")
 
-    with st.beta_expander("Model4: Random Forest"):
+    with st.expander("Model4: Random Forest"):
         col1, col2 = st.columns(2)
         col1.metric("Training accuracy", "69.8%")
         col2.metric("F1 Score", "0.819")    
     "---"
     st.subheader("Model Testing")
     st.write("Based on F1 scores of 4 models, I chose Model 2 which has the highest score.")
-    review_text = st.text_area("Patient Review")
+    review_text = st.text_area("Patient Review (1: positive, 0: negative)")
     if st.button("Predict"):
         with open('patient_review_pipeline.pkl','rb') as f:
             pipeline = pickle.load(f)
