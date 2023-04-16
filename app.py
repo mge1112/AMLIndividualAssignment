@@ -117,7 +117,7 @@ with model:
 
     with st.expander("Model4: Random Forest"):
         col1, col2 = st.columns(2)
-        col1.metric("Training accuracy", "69.8%")
+        col1.metric("Accuracy", "69.8%")
         col2.metric("F1 Score", "0.819")    
     "---"
     st.subheader("Model Testing")
