@@ -6,7 +6,8 @@ from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 from wordcloud import WordCloud
-
+from sklearn.pipeline import Pipeline
+import pickle
 
 # your google credentials json file 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "spring-appliedml-ab9851a06569.json"
@@ -117,7 +118,11 @@ with model:
     "---"
     st.subheader("Model Testing")
     st.write("Based on F1 scores of 4 models, I chose Model 2 which has the highest score.")
-    "---"
-
+    review_text = st.text_area("Patient Review")
+    if st.button("Predict"):
+        with open('patient_review_pipeline.pkl','rb') as f:
+            pipeline = pickle.load(f)
+            sentiment = pipeline.predict([review_text])
+            st.write("Predicted sentiment is:",sentiment)
 
     
